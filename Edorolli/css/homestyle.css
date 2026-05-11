@@ -1,0 +1,286 @@
+* {
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  width: 1100px;
+  margin: auto;
+  align-items: center;
+}
+
+.nama_website a {
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  font-family: "Poppins";
+  color: #fff;
+}
+
+.logo img {
+  padding: 22px 10px 0px 0px;
+  vertical-align: center;
+  float: left;
+  max-width: 50px;
+  max-height: 30px;
+}
+
+.menu {
+  float: right;
+}
+
+nav {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  line-height: 80px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  background-color: #0c2240;
+  z-index: 10;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  padding: 0px 16px 0px 16px;
+}
+
+nav ul li a:hover {
+  color: #bf4f26;
+}
+
+.login {
+  background-color: #bf4f26;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 5px 15px 5px 15px;
+}
+
+.login:hover {
+  background-color: transparent;
+  border: 2px solid #bf4f26;
+  border-radius: 6px;
+  color: white;
+}
+
+section {
+  margin: 10px auto 50px;
+}
+
+.homepage {
+  display: flex;
+}
+
+.landing img {
+  padding-top: 10px;
+  max-width: 600px;
+}
+
+.desc h2 {
+  font-weight: 800;
+  font-size: 85px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  color: #0c2240;
+  width: 100%;
+  line-height: 50px;
+}
+
+.desc h3 {
+  padding-top: 30px;
+  font-weight: 800;
+  font-size: 40px;
+  color: #0c2240;
+  width: 100%;
+  line-height: 45px;
+}
+
+.desc p {
+  padding-top: 15px;
+  font-size: 15px;
+  padding-bottom: 20px;
+}
+
+.desc .login {
+  background-color: #bf4f26;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 5px 15px 5px 15px;
+  font-weight: 700;
+}
+
+.desc .login:hover {
+  background-color: transparent;
+  border: 2px solid #bf4f26;
+  border-radius: 6px;
+  color: #0c2240;
+  font-weight: 900;
+}
+
+.populer h2 {
+  font-weight: 800;
+  font-size: 35px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #0c2240;
+  width: 100%;
+  line-height: 50px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.card {
+  border: 2px solid #e4e4e4;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 245px;
+}
+
+.image-container {
+  position: relative;
+  padding: 10px 10px 0 10px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 17px;
+  font-size: 24px;
+  color: #fff; /* Warna putih untuk visibilitas lebih baik */
+  cursor: pointer;
+}
+
+.heart-icon:hover {
+  position: absolute;
+  top: 10px;
+  right: 17px;
+  font-size: 24px;
+  color: #0c2240;
+  cursor: pointer;
+}
+
+.heart-icon .fas {
+  color: #0c2240;
+}
+
+.info {
+  padding: 0 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #000;
+  font-weight: 600;
+}
+
+.plus-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #555;
+  margin-left: 10px;
+}
+
+.plus-icon .fa-solid {
+  color: #0c2240;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 0 10px 10px 10px;
+  font-weight: 600;
+}
+
+.location i {
+  margin-right: 5px;
+}
+
+.events {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.owl-carousel .event-item {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.event-item .event-card {
+  position: relative;
+}
+
+.event-card img {
+  width:350px;
+  height: 230; /* Fixed height for consistency */
+
+  transition: transform 0.3s ease;
+}
+
+.event-card .event-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.event-info h2{
+  color: #fff;
+}
+
+.event-card:hover img {
+  transform: scale(1.05);
+}
+
+.event-card:hover .event-info {
+  transform: scale(1.05);
+}
