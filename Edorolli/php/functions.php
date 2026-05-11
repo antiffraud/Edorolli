@@ -1,6 +1,6 @@
 <?php
 function connectDatabase() {
-    $servername = 'localhost';
+    $servername = 'db';
     $username = 'root';
     $password = '123';
     $dbname = 'project_pweb';
