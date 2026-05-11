@@ -2,8 +2,8 @@
 function connectDatabase() {
     $servername = 'localhost';
     $username = 'root';
-    $password = '';
-    $dbname = 'project_pweb_rill';
+    $password = '123';
+    $dbname = 'project_pweb';
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);

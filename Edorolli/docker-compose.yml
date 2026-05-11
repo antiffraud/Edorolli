@@ -22,7 +22,7 @@ services:
     restart: always
     environment:
       MARIADB_DATABASE: project_pweb
-      MARIADB_ROOT_PASSWORD: rootpassword
+      MARIADB_ROOT_PASSWORD: 123
     volumes:
       # Otomatis import file SQL saat pertama kali dijalankan
       - ./project_pweb_rill.sql:/docker-entrypoint-initdb.d/project_pweb_rill.sql
