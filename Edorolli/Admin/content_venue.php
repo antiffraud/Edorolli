@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['email_admin'])) {
-    header("Location: http://localhost/Project-Web/Edorolli/Admin/login_admin.php");
+    header("Location: http://localhost:8080/Admin/login_admin.php");
     exit();
 }
 
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $venues = [];
     while ($row = $result->fetch_assoc()) {
         // Convert path
-        $row['gambar'] = str_replace('../uploads/', '../Edorolli/uploads/', $row['gambar']);
+        $row['gambar'] = str_replace('../uploads/', 'uploads/', $row['gambar']);
         $venues[] = $row;
     }
     $sql = "UPDATE venue SET main_venue = 1 WHERE id_venue IN (" . implode(',', $selected_venues) . ")";

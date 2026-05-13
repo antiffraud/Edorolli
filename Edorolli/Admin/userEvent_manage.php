@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['email_admin'])) {
-  header("Location: http://localhost/Project-Web/Edorolli/Admin/login_admin.php");
+  header("Location: http://localhost:8080/Admin/login_admin.php");
   exit();
 }
 

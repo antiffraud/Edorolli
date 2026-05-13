@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['name'])) {
-    header("Location: http://localhost/Project-Web/Edorolli/user/login_user.php");
+    header("Location: http://localhost:8080/user/login_user.php");
     exit();
 }
 

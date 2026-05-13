@@ -30,7 +30,7 @@ function registrasi($data) {
     // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['error_message'] = 'Email tidak valid!';
-        header("Location: http://localhost/Project-Web/Edorolli/signup.php");
+        header("Location: http://localhost:8080/signup.php");
         exit();
     }
 
@@ -38,7 +38,7 @@ function registrasi($data) {
     $result = mysqli_query($conn, "SELECT gmail FROM user WHERE gmail = '$email'");
     if (mysqli_fetch_assoc($result)) {
         $_SESSION['error_message'] = 'Email sudah tersedia, gunakan email yang lain!';
-        header("Location: http://localhost/Project-Web/Edorolli/signup.php");
+        header("Location: http://localhost:8080/signup.php");
         exit();
     }
 

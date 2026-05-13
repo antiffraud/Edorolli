@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
     if ($result->num_rows == 0) {
         // Tidak ada user yang ditemukan dengan email tersebut
         $_SESSION['error_message'] = "Akun Anda belum terdaftar!";
-        header("Location: http://localhost/Project-Web/Edorolli/User/login_user.php");
+        header("Location: http://localhost:8080/User/login_user.php");
         exit();
     } else {
         // Ambil data user

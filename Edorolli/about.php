@@ -1,56 +1,66 @@
+<?php
+// 1. Cek session di baris paling atas tanpa ada spasi sebelumnya
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// 2. Gunakan require_once agar tidak terjadi error "Cannot redeclare"
+require_once 'php/functions.php';
+
+// 3. Panggil koneksi database dari functions.php
+$conn = connectDatabase();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $is_valid_user = false;
+
+    if (isset($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
+        $email = $_SESSION['email'];
+        $name = $_SESSION['name'];
+        $nomorhp = $_SESSION['nomorhp'];
+        
+        $query = "SELECT id FROM user WHERE id = '$user_id' AND gmail = '$email' AND name = '$name' AND nomorhp = '$nomorhp'";
+        $result = mysqli_query($conn, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $is_valid_user = true;
+        }
+    }
+
+    if (isset($_SESSION['provider_id'])) {
+        $provider_id = $_SESSION['provider_id'];
+        $email = $_SESSION['email'];
+        $name = $_SESSION['name'];
+        $nomorhp = $_SESSION['nomorhp'];
+
+        $query = "SELECT id_provider FROM provider WHERE id_provider = '$provider_id' AND gmail = '$email' AND username = '$name' AND nomorhp = '$nomorhp'";
+        $result = mysqli_query($conn, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $is_valid_user = true;
+        }
+    }
+
+    if (!$is_valid_user) {
+        echo "<script>alert('Anda harus memiliki akun untuk mengisi formulir ini.');</script>";
+        echo "<script>window.location.href='login.php';</script>";
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edoroli - About Us</title>
-    <link rel="stylesheet" href="../Edorolli/css/about.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="css/about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-    <?php
-    session_start();
-    include('../Edorolli/php/functions.php'); // Make sure to include your database connection
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $is_valid_user = false;
-
-        if (isset($_SESSION['user_id'])) {
-            $user_id = $_SESSION['user_id'];
-            $query = "SELECT id FROM user WHERE id = $user_id AND gmail = '{$_SESSION['email']}' AND name = '{$_SESSION['name']}' AND nomorhp = '{$_SESSION['nomorhp']}'";
-            $result = mysqli_query($conn, $query);
-            if (mysqli_num_rows($result) > 0) {
-                $is_valid_user = true;
-            }
-        }
-
-        if (isset($_SESSION['provider_id'])) {
-            $provider_id = $_SESSION['provider_id'];
-            $query = "SELECT id_provider FROM provider WHERE id_provider = $provider_id AND gmail = '{$_SESSION['email']}' AND username = '{$_SESSION['name']}' AND nomorhp = '{$_SESSION['nomorhp']}'";
-            $result = mysqli_query($conn, $query);
-            if (mysqli_num_rows($result) > 0) {
-                $is_valid_user = true;
-            }
-        }
-
-        if (!$is_valid_user) {
-            echo "<script>alert('Anda harus memiliki akun untuk mengisi formulir ini.');</script>";
-            echo "<script>window.location.href='login.php';</script>";
-            exit;
-        }
-    }
-    ?>
     <nav>
         <div class="wrapper">
             <div class="logo">
-                <img src="../Edorolli/image/logo.png" alt="Edoroli Logo" />
+                <img src="image/logo.png" alt="Edoroli Logo" />
             </div>
             <div class="nama_website">
                 <a>Edoroli</a>
@@ -120,17 +130,17 @@
             <h2>Our Team Edoroli</h2>
             <div class="team">
                 <div class="team-member">
-                    <img src="../Edorolli/image/Alfin.jpeg" alt="Nama" />
+                    <img src="image/Alfin.jpeg" alt="Nama" />
                     <h3>M. Alfin Nashirul Haq</h3>
                     <p>Programmer</p>
                 </div>
                 <div class="team-member">
-                    <img src="../Edorolli/image/Erwin.jpeg" alt="Nama" />
+                    <img src="image/Erwin.jpeg" alt="Nama" />
                     <h3>Muhamad Erwin Hariadinata</h3>
                     <p>Programmer</p>
                 </div>
                 <div class="team-member">
-                    <img src="../Edorolli/image/Bram.jpeg" alt="Nama" />
+                    <img src="image/Bram.jpeg" alt="Nama" />
                     <h3>Ida Bagus Brahmanta</h3>
                     <p>Programmer</p>
                 </div>
@@ -141,7 +151,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-left">
-                <img src="../Edorolli/image/logo.png" alt="Edoroli Logo" />
+                <img src="image/logo.png" alt="Edoroli Logo" />
                 <div class="nama_website">
                     <a>Edoroli</a>
                 </div>

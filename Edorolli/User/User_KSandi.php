@@ -144,7 +144,7 @@ $nickname = $nicknameArray[0];
         <h2>Apakah anda yakin ingin keluar?</h2>
         <div class="popup-buttons_logout">
           <a id="cancelBtnLO" class="cancel-btnLO">Tidak</a>
-          <a href="../Edorolli/index.php" id="confirmBtnLO" class="confirm-btnLO">Ya</a>
+          <a href="index.php" id="confirmBtnLO" class="confirm-btnLO">Ya</a>
         </div>
       </div>
     </div>

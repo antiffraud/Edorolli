@@ -19,9 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Menjalankan query dan memeriksa apakah berhasil
     if ($conn->query($sql) === TRUE) {
-        header("Location: http://localhost/Project-Web/Edorolli/contact.html?status=success");
+        header("Location: http://localhost:8080/contact.html?status=success");
     } else {
-        header("Location: http://localhost/Project-Web/Edorolli/contact.html?status=error");
+        header("Location: http://localhost:8080/contact.html?status=error");
     }
 }
 

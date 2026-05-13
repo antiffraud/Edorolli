@@ -5,7 +5,7 @@ $conn = connectDatabase();
 
 if (!isset($_SESSION['username'])) {
     // Redirect to login page if not logged in
-    header("Location: http://localhost/Project-Web/Edorolli/Provider/prov_login.php");
+    header("Location: http://localhost:8080/Provider/prov_login.php");
     exit();
 } else {
     $username = $_SESSION['username'];

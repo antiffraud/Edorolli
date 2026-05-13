@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['username'])) {
   // Jika sesi nama tidak diatur, redirect ke halaman login
-  header("Location: http://localhost/Project-Web/Edorolli/Provider/prov_login.php");
+  header("Location: http://localhost:8080/Provider/prov_login.php");
   exit();
 }
 

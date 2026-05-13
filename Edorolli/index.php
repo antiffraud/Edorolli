@@ -19,7 +19,7 @@ if ($events_result === false) {
 }
 
 // Ambil main_venue yang disetujui oleh admin untuk semua provider
-$json_venues = file_get_contents('../Edorolli/json/main_venues.json');
+$json_venues = file_get_contents('json/main_venues.json');
 $main_venues = json_decode($json_venues, true);
 
 // Pastikan $main_venues adalah array yang valid
@@ -57,8 +57,8 @@ if (is_array($main_venues) && !empty($main_venues)) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edoroli - Reservasi Veneu Online</title>
-    <link rel="stylesheet" href="../Edorolli/css/homestyle.css" />
-    <link rel="stylesheet" href="../Edorolli/css/footer.css" />
+    <link rel="stylesheet" href="css/homestyle.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -67,7 +67,7 @@ if (is_array($main_venues) && !empty($main_venues)) {
 <nav>
     <div class="wrapper">
         <div class="logo">
-            <img src="../Edorolli/image/logo.png" />
+            <img src="image/logo.png" />
         </div>
         <div class="nama_website">
             <a>Edoroli</a>
@@ -97,7 +97,7 @@ if (is_array($main_venues) && !empty($main_venues)) {
                 <a href="role-selection.html" class="login">Get Started</a>
             </div>
             <div class="landing">
-                <img src="../Edorolli/image/banner.png" />
+                <img src="image/banner.png" />
             </div>
         </div>
         <?php if (!empty($venues)): ?>
@@ -142,7 +142,7 @@ if (is_array($main_venues) && !empty($main_venues)) {
     <?php while ($event = $events_result->fetch_assoc()): ?>
         <div class="event-card">
             <a href="role-selection.html">
-                <img src="../Edorolli/image/<?php echo htmlspecialchars($event['gambar']); ?>" />
+                <img src="image/<?php echo htmlspecialchars($event['gambar']); ?>" />
             </a>
             <div class="event-info">
                 <a href="role-selection.html"><h2><?php echo htmlspecialchars($event['nama_event']); ?></h2></a>
@@ -155,7 +155,7 @@ if (is_array($main_venues) && !empty($main_venues)) {
 <footer>
     <div class="footer-container">
         <div class="footer-left">
-            <img src="../Edorolli/image/logo.png" alt="Edoroli Logo" />
+            <img src="image/logo.png" alt="Edoroli Logo" />
             <div class="nama_website">
                 <a>Edoroli</a>
             </div>
@@ -179,7 +179,7 @@ if (is_array($main_venues) && !empty($main_venues)) {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-<script src="../Edorolli/js/iconHomepage.js"></script>
-<script src="../Edorolli/js/home_login.js"></script>
+<script src="js/iconHomepage.js"></script>
+<script src="js/home_login.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_destroy();
-header("Location: http://localhost/Project-Web/Edorolli/index.php");
+header("Location: http://localhost:8080/index.php");
 exit();
 
 ?>

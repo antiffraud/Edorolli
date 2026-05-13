@@ -10,5 +10,5 @@ document.getElementById("cancelBtnLO").addEventListener("click", function () {
 });
 
 document.getElementById("confirmBtnLO").addEventListener("click", function () {
-  window.location.href = "http://localhost/Project-Web/Edorolli/php/logout.php";
+  window.location.href = "http://localhost:8080/php/logout.php";
 });

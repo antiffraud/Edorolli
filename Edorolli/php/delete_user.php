@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['username'])) {
-  header("Location: http://localhost/Project-Web/Edorolli/Admin/login_admin.php");
+  header("Location: http://localhost:8080/Admin/login_admin.php");
   exit();
 }
 
@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
     if ($stmt->execute()) {
       // Jika berhasil, arahkan kembali ke halaman manage_user.php
       echo "User deleted successfully"; // Debugging line
-      header("Location: http://localhost/project-web/Edorolli/manage_user.php");
+      header("Location: http://localhost:8080/manage_user.php");
       exit();
     } else {
       echo "Error executing query: " . $stmt->error;
